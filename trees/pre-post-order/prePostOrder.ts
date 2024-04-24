@@ -4,15 +4,42 @@ import { TreeNodeNum } from "../common/tree";
  * Returns an array of values of visited nodes. */
 
 function preOrder(node: TreeNodeNum | null): number[] {
-  return [42];
+  const arr : number[] = [];
+  if (!node) return arr;
+  debugger
+  arr.push(node!.val)
+
+  for (const child of node.children) {
+    arr.push(...preOrder(child));
+  }
+
+  return arr;
 }
+
+/**
+ * arr = [3];
+ *
+ * node.val = 1
+ *
+ *
+ * preOrder(1)
+ */
 
 
 /** dfsPostOrder(): Traverse from the invoking node using post-order DFS.
  * Returns an array of values of visited nodes. */
 
 function postOrder(node: TreeNodeNum | null): number[] {
-  return [42];
+  const arr : number[] = [];
+  if (!node) return arr;
+
+  for (const child of node.children) {
+    arr.push(...postOrder(child));
+  }
+
+  arr.push(node!.val)
+
+  return arr;
 }
 
 export { preOrder, postOrder };
