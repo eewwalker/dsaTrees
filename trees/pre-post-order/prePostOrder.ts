@@ -16,15 +16,6 @@ function preOrder(node: TreeNodeNum | null): number[] {
   return arr;
 }
 
-/**
- * arr = [3];
- *
- * node.val = 1
- *
- *
- * preOrder(1)
- */
-
 
 /** dfsPostOrder(): Traverse from the invoking node using post-order DFS.
  * Returns an array of values of visited nodes. */
